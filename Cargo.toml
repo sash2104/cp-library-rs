@@ -1,0 +1,10 @@
+[package]
+name = "cp-library-rs"
+version = "0.1.0"
+authors = ["sash2104"]
+edition = "2021"
+description = "Library for Competitive Programming in Rust"
+license-file = "LICENSE"
+readme = "README.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

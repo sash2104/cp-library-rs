@@ -15,7 +15,7 @@ impl BinarySearch {
         let mut ng = self.ng;
         let mut ok = self.ok;
 
-        while (ok-ng).abs() > 1 {
+        while (ok - ng).abs() > 1 {
             let mid = (ok + ng) / 2;
 
             if check(mid) {
@@ -36,7 +36,7 @@ mod tests {
     fn test_binary_search() {
         let s = [0, 1, 2, 3, 5, 8, 13, 21, 34, 55];
         let bs = BinarySearch::new(s.len() as i64, -1);
-        assert_eq!(bs.search(|mid| s[mid as usize] < 56), s.len() as i64 -1);
+        assert_eq!(bs.search(|mid| s[mid as usize] < 56), s.len() as i64 - 1);
         assert_eq!(bs.search(|mid| s[mid as usize] < 10), 5);
         assert_eq!(bs.search(|mid| s[mid as usize] < 2), 1);
         assert_eq!(bs.search(|mid| s[mid as usize] < 0), -1);

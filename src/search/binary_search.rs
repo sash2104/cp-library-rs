@@ -36,7 +36,19 @@ mod tests {
     fn test_binary_search() {
         let s = [0, 1, 2, 3, 5, 8, 13, 21, 34, 55];
         let bs = BinarySearch::new(s.len() as i64, -1);
+        assert_eq!(bs.search(|mid| s[mid as usize] < 56), s.len() as i64 -1);
         assert_eq!(bs.search(|mid| s[mid as usize] < 10), 5);
+        assert_eq!(bs.search(|mid| s[mid as usize] < 2), 1);
         assert_eq!(bs.search(|mid| s[mid as usize] < 0), -1);
+    }
+
+    #[test]
+    fn test_binary_search_rev() {
+        let s = [0, 1, 2, 3, 5, 8, 13, 21, 34, 55];
+        let bs = BinarySearch::new(-1, s.len() as i64);
+        assert_eq!(bs.search(|mid| s[mid as usize] > 55), s.len() as i64);
+        assert_eq!(bs.search(|mid| s[mid as usize] > 10), 6);
+        assert_eq!(bs.search(|mid| s[mid as usize] > 2), 3);
+        assert_eq!(bs.search(|mid| s[mid as usize] > -1), 0);
     }
 }
